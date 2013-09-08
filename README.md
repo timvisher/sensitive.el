@@ -15,7 +15,7 @@ Unported License. To view a copy of this license, visit
 Creative Commons, 444 Castro Street, Suite 900, Mountain View,
 California, 94041, USA.
 
-# Commentary:
+## Commentary:
 
 This package is intended to make it dead simple to include
 sensitive information in your public .emacs file. More people
