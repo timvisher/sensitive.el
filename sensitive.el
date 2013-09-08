@@ -41,7 +41,7 @@
 ;;;###autoload
 (defun load-sensitive-files ()
   (if (file-directory-p sensitive-root)
-      (cl-dolist (setting-file (cl-remove-if 'file-directory-p (sequences-file-seq "~/Dropbox/sensitive")))
+      (cl-dolist (setting-file (cl-remove-if 'file-directory-p (sequences-file-seq sensitive-root)))
         (with-temp-buffer
           (insert-file-contents setting-file)
           (goto-char (point-min))
