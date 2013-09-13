@@ -24,6 +24,38 @@
 ;; information they need to load without having to jump through hoops
 ;; to load it should make that easier.
 
+;;; Usage:
+
+;; To use sensitive, place directories and files in `sensitive-root`
+;; that correspond to modes and variables.
+;;
+;; For instance. If the contents of `sensitive-root` (by default
+;; `~/sensitive`) are as follows:
+;;
+;;     {sensitive-root}
+;;     ├── erc
+;;     │   └── erc-password -> "password as a string"
+;;     └── pivotal-tracker
+;;         └── pivotal-api-token -> "api token as a string"
+;;
+;; `sensitive` will cause the forms
+;;
+;;     (eval-after-load 'erc
+;;       '(setq 'erc-password "password as a string"))
+;;     
+;;     (eval-after-load 'pivotal-api-token
+;;       '(setq pivotal-api-token "api token as string"))
+;;
+;; to be evaled.
+;;
+;; It's important to note that the contents of the variable files
+;; should be exactly what you would have used if you were to write the
+;; `eval-after-load` form yourself. In other words, there is no
+;; defaulting to strings or something, the form is actually read via
+;; the elisp reader and inserted into the `eval-after-load` form.
+;;
+;; That's all there is to it. Happy hunting!
+
 ;;; Code:
 
 (require 'cl-lib)
