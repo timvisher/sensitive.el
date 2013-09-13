@@ -51,7 +51,7 @@ to be evaled.
 It's important to note that the contents of the variable files
 should be exactly what you would have used if you were to write the
 `eval-after-load` form yourself. In other words, there is no
-defaulting to strings or something, the form is actually read via
+defaulting to strings or something. The form is actually read via
 the elisp reader and inserted into the `eval-after-load` form.
 
 That's all there is to it. Happy hunting!
